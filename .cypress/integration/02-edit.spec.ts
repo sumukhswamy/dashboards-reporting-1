@@ -29,10 +29,13 @@ describe('Cypress', () => {
     // update report description
     cy.get('#reportSettingsDescription').type(' update description');
 
+    // ensure file format is selected (radio may not be pre-populated on edit)
+    cy.get('#csv').check({ force: true });
+
     cy.get('#editReportDefinitionButton').click({ force: true });
 
     cy.wait(12500);
-    
+
     // check that re-direct to home page
     cy.get('#reportDefinitionDetailsLink').should('exist');
   });
@@ -55,6 +58,10 @@ describe('Cypress', () => {
     cy.url().should('include', 'edit');
 
     cy.wait(1000);
+
+    // ensure file format is selected
+    cy.get('#csv').check({ force: true });
+
     cy.get('#reportDefinitionTriggerTypes > div:nth-child(2)').click({ force: true });
 
     cy.get('#Schedule').check({ force: true });
@@ -84,6 +91,9 @@ describe('Cypress', () => {
     cy.url().should('include', 'edit');
 
     cy.wait(1000);
+
+    // ensure file format is selected
+    cy.get('#csv').check({ force: true });
 
     cy.get('#reportDefinitionTriggerTypes > div:nth-child(1)').click({ force: true });
 
