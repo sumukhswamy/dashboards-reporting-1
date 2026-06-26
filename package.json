@@ -29,6 +29,7 @@
     "jsdom": "18.0.0",
     "json-2-csv": "^3.20.0",
     "jspdf": "^4.2.1",
+    "uuid": "^8.3.2",
     "react-addons-test-utils": "^15.6.2",
     "react-id-generator": "^3.0.1",
     "react-markdown": "^4.3.1",
